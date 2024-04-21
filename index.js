@@ -1,6 +1,4 @@
 const express = require('express');
-
-const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
@@ -11,8 +9,8 @@ require ('dotenv').config();
 const app = express();
 
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extendend: true}));
+app.use(express.json());
+app.use(express.urlencoded({extendend: true}));
 
 mongoose.connect(process.env.DB_CONNECTION || '')
 
